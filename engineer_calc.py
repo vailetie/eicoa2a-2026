@@ -24,14 +24,17 @@ def main():
         print("Outside function:", DEFAULT_CURRENT)
         choice = input("Select an option: ")
         if choice == "1":
-            voltage = float(input("Enter voltage (V): "))
-            current = input("Enter current (A) or press Enter for default: ")
-            if current == "":
-                current = DEFAULT_CURRENT
-            else:
-                current= float(current)
-            resistance = calc_resistance(voltage, current)
-            print("Resistance =", resistance, "ohms")
+                voltage = float(input("Enter voltage (V): "))
+                current = input("Enter current (A) or press Enter for default: ")
+                if current == "":
+                    current = DEFAULT_CURRENT
+                else:
+                    current = float(current)
+                try:
+                  resistance = calc_resistance(voltage, current)
+                  print("Resistance =", resistance, "ohms")
+                except ZeroDivisionError:
+                    print("Error: Current cannot be zero.") 
         elif choice == "2":
             direction = input("Enter conversion (mm_to_in or in_to_mm): ")
             value = float(input("Enter the measurement: "))
