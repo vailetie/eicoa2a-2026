@@ -2,17 +2,23 @@ from ohms_law import calc_resistance
 from unit_converter import mm_to_inches, inches_to_mm, cm_to_inches, inches_to_cm
 DEFAULT_CURRENT = 0.5
 print("Global value:", DEFAULT_CURRENT)
+def build_menu():
+    """Return the list of menu option labels for the engineering calculator."""
+    options = [
+        "Calculate Resistance",
+        "Convert mm to inches",
+        "Convert inches to mm",
+        "Convert cm to inches",
+        "Convert inches to cm",
+        "Exit"
+    ]
+    return options
 def display_menu():
-    """Print a numbered menu of engineering calculations.
-    the menu includes 
-    1. Calculate resistance (Ohms Law)
-    2. Convert length ( mm <-> inches )
-    3. Exit
-    """
-    print("\n--- Engineering Calculator Menu ---")
-    print("1. Calculate resistance")
-    print("2. Convert length")
-    print("3. Exit")
+   """Print the numbered engineering calculator menu using build_menu()."""
+   print("\n--- Engineering Calculator Menu ---")
+   options = build_menu()
+   for i in range(len(options)):
+        print(str(i + 1) + ". " + options[i])
 def show_default():
     DEFAULT_CURRENT = 1.0
     print("Inside function:", DEFAULT_CURRENT)
@@ -52,7 +58,7 @@ def main():
                 print("Converted value:", result, "cm")
             else:
                 print("Invalid conversion option.")
-        elif choice == "3":
+        elif choice == "6":
             print("Exiting the calculator. Goodbye!")
             running = False
         else:
