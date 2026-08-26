@@ -1,5 +1,5 @@
 from ohms_law import calc_resistance
-from unit_converter import mm_to_inches, inches_to_mm
+from unit_converter import mm_to_inches, inches_to_mm, cm_to_inches, inches_to_cm
 DEFAULT_CURRENT = 0.5
 print("Global value:", DEFAULT_CURRENT)
 def display_menu():
@@ -36,7 +36,7 @@ def main():
                 except ZeroDivisionError:
                     print("Error: Current cannot be zero.") 
         elif choice == "2":
-            direction = input("Enter conversion (mm_to_in or in_to_mm): ")
+            direction = input("Enter conversion (mm_to_in, in_to_mm, cm_to_in, in_to_cm): ")
             value = float(input("Enter the measurement: "))
             if direction == "mm_to_in":
                 result = mm_to_inches(value)
@@ -44,6 +44,12 @@ def main():
             elif direction == "in_to_mm":
                 result = inches_to_mm(value)
                 print("Converted value:", result, "mm")
+            elif direction == "cm_to_in":
+                result = cm_to_inches(value)
+                print("Converted value:", result, "inches")
+            elif direction == "in_to_cm":
+                result = inches_to_cm(value)
+                print("Converted value:", result, "cm")
             else:
                 print("Invalid conversion option.")
         elif choice == "3":
