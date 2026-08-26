@@ -1,0 +1,10 @@
+1. A function is a reusable block of code that performs one specific
+task preventing you from repeating the same code. 
+if there was a bug you would only need to fix it in one place
+
+2. Parameters are place holders in a functions definition, while arguments are there
+real values supplied when the function is called. Parameters and arguements
+are related but not the same thing.
+
+3. A docstring tells you what a function does, what it needs, and what it returns
+without requiring anyone to read the functions actual code.
